@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_data_device,12-csv.12-csv,model_data_device,,1,1,1,1
+access_data_content,12-csv.12-csv,model_data_content,,1,1,1,1
+access_csv_import,12-csv.12-csv,model_csv_import,,1,1,1,1

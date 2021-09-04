@@ -1,0 +1,93 @@
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.csv.import</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="40"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Invoicing" string="CSV Import">
+                    <h2>CSV Import</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="row mt16">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="directory">
+                                        Directory
+                                    </label>
+                                    <div class="text-muted">
+                                        Set the directory which contains the CSV files
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="directory"/>
+                                        </div>
+                                    </div>
+                                    <label for="delimiter">
+                                        Delimiter
+                                    </label>
+                                    <div class="text-muted">
+                                        Set the delimiter that is used on the CSVs
+                                    </div>
+                                    <field name="delimiter"/>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="ftps"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="ftps">
+                                        ftps
+                                    </label>
+                                    <div class="text-muted">
+                                        Whether ftp over SSL will be used (this will be activated depending on the URL used below.
+                                    </div>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="ftp_host">
+                                        FTP Host
+                                    </label>
+                                    <div class="text-muted">
+                                        The host that we will connect to, include directory in the URL.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ftp_host"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="ftp_username">
+                                        FTP Username
+                                    </label>
+                                    <div class="text-muted">
+                                        The username to be used for the FTP connection
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ftp_username"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="ftp_password">
+                                        FTP Password
+                                    </label>
+                                    <div class="text-muted">
+                                        The password to be used for the FTP connection
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ftp_password"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,109 @@
+<odoo>
+
+    <record model="ir.ui.view" id="tree_data_device">
+        <field name="type">tree</field>
+        <field name="name">data.device.tree.view</field>
+        <field name="model">data.device</field>
+        <field name="arch" type="xml">
+            <field name="name"/>
+            <field name="description"/>
+            <field name="code"/>
+            <field name="expire_date"/>
+            <field name="state"/>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_data_device">
+        <field name="type">form</field>
+        <field name="name">data.device.form.view</field>
+        <field name="model">data.device</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                        <field name="code"/>
+                        <field name="expire_date"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_import_devices">
+      <field name="name">Devices</field>
+      <field name="res_model">data.device</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="tree_data_content">
+        <field name="type">tree</field>
+        <field name="name">data.content.tree.view</field>
+        <field name="model">data.content</field>
+        <field name="arch" type="xml">
+            <field name="name"/>
+            <field name="description"/>
+            <field name="device"/>
+            <field name="expire_date"/>
+            <field name="state"/>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_data_content">
+        <field name="type">form</field>
+        <field name="name">data.content.form.view</field>
+        <field name="model">data.content</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                        <field name="device"/>
+                        <field name="expire_date"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_import_content">
+      <field name="name">Content</field>
+      <field name="res_model">data.content</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        name="Imports"
+        id="import_menu_root"
+        web_icon="12-csv,static/description/icon.png"
+        sequence="50"/>
+    <menuitem
+        id="import_menu"
+        name="Imports"
+        parent="import_menu_root"
+        sequence="2"/>
+    <menuitem
+        name="Devices"
+        id="import_devices"
+        parent="import_menu"
+        action="action_import_devices"/>
+    <menuitem
+        name="Content"
+        id="import_content"
+        parent="import_menu"
+        action="action_import_content"/>
+
+    <menuitem
+        id="menu_import_configuration"
+        name="Configuration"
+        parent="import_menu_root"/>
+
+</odoo>
